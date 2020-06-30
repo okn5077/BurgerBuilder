@@ -3,7 +3,7 @@ import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSumm
 import { Route, withRouter, Redirect } from 'react-router-dom';
 import ContactData from './ContactData/ContactData';
 import { connect } from 'react-redux';
-import * as actions from '../../store/actions/index';
+// import * as actions from '../../store/actions/index';
 
 class Checkout extends Component {
 
@@ -14,7 +14,7 @@ class Checkout extends Component {
 
 
     componentWillMount() {
-        this.props.onInitPurchase();
+        // this.props.onInitPurchase();
 
         // const query = new URLSearchParams(this.props.location.search);
         // const ingredients = {};
@@ -71,12 +71,12 @@ const mapStateToProps = state => {
 }
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onInitPurchase: () => dispatch(actions.purchaseInit())
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         onInitPurchase: () => dispatch(actions.purchaseInit())
+//     }
+// }
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Checkout));
+export default connect(mapStateToProps)(withRouter(Checkout));
